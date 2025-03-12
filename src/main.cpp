@@ -5,7 +5,7 @@
 #include <ArduinoJson.h>
 #define LIGHT_PIN 2
 
-int rain = -9.0;
+int rain = 0.0;
 
 void setup(){
     pinMode(LIGHT_PIN,OUTPUT);
@@ -69,7 +69,7 @@ void loop(){
 
         int light_state = object["rainfall"];
         
-        if(light_state >= 0){
+        if(light_state > 0){
           digitalWrite(LIGHT_PIN, HIGH);
         }
         else digitalWrite(LIGHT_PIN, LOW);
